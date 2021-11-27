@@ -10,8 +10,8 @@ public class Arquivo {
 
     static void insertNameFile(String name){
         try {
-            FileWriter myWriter = new FileWriter("filetest.txt");
-            myWriter.write(name);
+            FileWriter myWriter = new FileWriter("filetest.txt",true);
+            myWriter.write('\n'+name );
             myWriter.close();
             System.out.println("Successo em escrever nome no arquivo.");
         } catch (IOException e) {
@@ -47,9 +47,10 @@ public class Arquivo {
     static void createFile(){
         try{
             File meuArquivo =  new File("filetest.txt");
-            if(meuArquivo.createNewFile()){
-
+            if(!meuArquivo.exists()){
+                meuArquivo.createNewFile();
                 System.out.println("Arquivo Criado com Sucesso : " + meuArquivo.getName());
+
             }
             else{
                 System.out.println("Arquivo Já Existe");

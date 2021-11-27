@@ -8,6 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Arquivo.createFile();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bem vindo ao Manipulador de Arquivo Txt Escolha entre as Seguintes Opções : "+
                 "\n 1- Escrever nome no arquivo"+ "\n 2- ler nome dentro do arquivo"+ "\n 3- Apagar Arquivo \n");
@@ -16,13 +18,12 @@ public class Main {
 
         if(option.equals("1")){
             Scanner fileNameScanner = new Scanner(System.in);
-            System.out.println("Qual nome você deseja inserir no Arquivo? :");
+            System.out.println("Qual nome você deseja inserir no Arquivo? :\n");
             String inputNamed = fileNameScanner.nextLine();
             Arquivo.insertNameFile(inputNamed);
 
         }
         else if(option.equals("2")){
-            System.out.println("vai ler todos os nomes do arquivo ");
             Arquivo.readFile();
         }
 
